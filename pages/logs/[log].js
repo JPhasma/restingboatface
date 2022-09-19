@@ -9,18 +9,20 @@ export default function LogEntry({ log }) {
       <Link href='/logs'>
         <a className='btn'>Return to Logs</a>
       </Link>
-      {log.image && (
+      {log.banner && (
         <div>
           <Image
-            src={log.image.formats.medium.url}
+            src={log.banner.formats.small.url}
             width={960}
             height={600}
             alt={log.name}
           />
         </div>
       )}
-      <h1>Log Entry: {log.name}</h1>
+      <h1>{log.title}</h1>
       <h5>{new Date(log.date).toLocaleDateString('en-UK')}</h5>
+      <h3>Entry:</h3>
+      <p>{log.ahoy}</p>
       <Link href='/logs'>
         <a className='btn'> Go Back</a>
       </Link>
@@ -29,7 +31,7 @@ export default function LogEntry({ log }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`${API_URL}/events`);
+  const res = await fetch(`${API_URL}/logs`);
   const logs = await res.json();
 
   const paths = logs.map((log) => ({
@@ -43,7 +45,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { log } }) {
-  const res = await fetch(`${API_URL}/events?slug=${log}`);
+  const res = await fetch(`${API_URL}/logs?slug=${log}`);
   const events = await res.json();
 
   return {

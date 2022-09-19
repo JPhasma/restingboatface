@@ -9,8 +9,8 @@ function LogListElement({ log }) {
       <div className={styles.img}>
         <Image
           src={
-            log.image
-              ? log.image.formats.thumbnail.url
+            log.banner
+              ? log.banner.formats.thumbnail.url
               : '/images/event-default.png'
           }
           width={170}
@@ -18,8 +18,8 @@ function LogListElement({ log }) {
           alt={log.name}
         />
       </div>
-      <h3>Log Entry </h3>
-      <h4>{log.name}</h4>
+
+      <h4>{log.title}</h4>
       <span>
         {new Date(log.date).toLocaleDateString('en-UK')} at {log.time}
       </span>
