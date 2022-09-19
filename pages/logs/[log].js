@@ -25,21 +25,7 @@ export default function LogEntry({ log }) {
   );
 }
 
-export async function getStaticPaths() {
-  const res = await fetch(`${API_URL}/logs`);
-  const logs = await res.json();
-
-  const paths = logs.map((log) => ({
-    params: { log: log.slug },
-  }));
-
-  return {
-    paths,
-    fallback: true,
-  };
-}
-
-export async function getStaticProps({ params: { log } }) {
+export async function getServerSideProps({ params: { log } }) {
   const res = await fetch(`${API_URL}/logs?slug=${log}`);
   const events = await res.json();
 
@@ -47,6 +33,31 @@ export async function getStaticProps({ params: { log } }) {
     props: {
       log: events[0],
     },
-    revalidate: 1,
   };
 }
+
+// export async function getStaticPaths() {
+//   const res = await fetch(`${API_URL}/logs`);
+//   const logs = await res.json();
+
+//   const paths = logs.map((log) => ({
+//     params: { log: log.slug },
+//   }));
+
+//   return {
+//     paths,
+//     fallback: true,
+//   };
+// }
+
+// export async function getStaticProps({ params: { log } }) {
+//   const res = await fetch(`${API_URL}/logs?slug=${log}`);
+//   const events = await res.json();
+
+//   return {
+//     props: {
+//       log: events[0],
+//     },
+//     revalidate: 1,
+//   };
+// }
