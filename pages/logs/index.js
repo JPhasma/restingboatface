@@ -5,15 +5,15 @@ import styles from '@styles/Layout.module.css';
 
 import LogListElement from '@components/LogsListElement';
 
-export default function Home({ events }) {
+export default function Logs({ logs }) {
   return (
     <Layout>
       <main className={styles.main}>
         <h1 className={styles.title}>Logs</h1>
 
         <div className={styles.grid}>
-          {events.length === 0 && <h1>No Logs to be seen...</h1>}
-          {events.map((log) => (
+          {logs.length === 0 && <h1>No Logs to be seen...</h1>}
+          {logs.map((log) => (
             <LogListElement key={log.id} log={log} />
           ))}
         </div>
@@ -24,10 +24,10 @@ export default function Home({ events }) {
 
 export async function getStaticProps() {
   const res = await fetch(`${API_URL}/logs?_sort=date:ASC`);
-  const events = await res.json();
-  // console.log(events); //LOGS ON SERVER, NOT IN BROWSER FOR getServerSideProps
+  const logs = await res.json();
+  // console.log(logs); //LOGS ON SERVER, NOT IN BROWSER FOR getServerSideProps
   return {
-    props: { events },
+    props: { logs },
     revalidate: 1,
   };
 }

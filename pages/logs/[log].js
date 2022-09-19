@@ -11,12 +11,7 @@ export default function LogEntry({ log }) {
       </Link>
       {log.banner && (
         <div>
-          <Image
-            src={log.banner.formats.small.url}
-            width={960}
-            height={600}
-            alt={log.name}
-          />
+          <Image src={log.banner.url} width={960} height={600} alt={log.name} />
         </div>
       )}
       <h1>{log.title}</h1>
