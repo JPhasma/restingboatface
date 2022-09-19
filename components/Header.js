@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Search from './Search';
 import styles from '@styles/Header.module.css';
 
 function Header() {
@@ -9,6 +10,7 @@ function Header() {
           <h1>Resting Boat Face</h1>
         </a>
       </Link>
+      <Search />
     </div>
   );
 }
