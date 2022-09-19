@@ -1,9 +1,12 @@
 import Image from 'next/image';
 import Layout from '@components/Layout';
-
+import { API_URL } from '@config/index';
 import styles from '@styles/Layout.module.css';
+import Link from 'next/link';
 
-export default function Home() {
+import LogEntry from '@components/LogEntry';
+
+export default function Home({ events }) {
   return (
     <Layout>
       <main className={styles.main}>
@@ -28,7 +31,28 @@ export default function Home() {
             </a>
           </p>
         </div>
+        <div>
+          {events.length === 0 && <h1>No Logs to be seen...</h1>}
+          {events.map((log) => (
+            <LogEntry key={log.id} log={log} />
+          ))}
+          {events.length > 0 && (
+            <Link href='/logs'>
+              <a className='btn'>More Logs</a>
+            </Link>
+          )}
+        </div>
       </main>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch(`${API_URL}/api/events`);
+  const events = await res.json();
+  // console.log(events); //LOGS ON SERVER, NOT IN BROWSER FOR getServerSideProps
+  return {
+    props: { events: events.slice(0, 3) },
+    revalidate: 1,
+  };
 }

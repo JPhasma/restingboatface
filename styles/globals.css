@@ -24,3 +24,15 @@ a {
     background: black;
   }
 }
+
+/* Button Global Classes */
+.btn {
+  background-color: deepskyblue;
+  color: white;
+  padding: 0.3rem;
+  margin: 0 16px;
+}
+
+.btn:hover {
+  background-color: aquamarine;
+}

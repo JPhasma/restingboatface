@@ -7,7 +7,7 @@ import styles from '@styles/Layout.module.css';
 
 function Layout({ title, robots, keywords, description, children }) {
   const router = useRouter();
-  console.log(router);
+  // console.log(router);
 
   return (
     <div>
