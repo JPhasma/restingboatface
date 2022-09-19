@@ -29,10 +29,6 @@ export default function Home() {
           </p>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <p>&copy; RBF 2022</p>
-      </footer>
     </Layout>
   );
 }
