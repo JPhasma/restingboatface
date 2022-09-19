@@ -6,10 +6,22 @@ import styles from '@styles/LogListElement.module.css';
 function LogListElement({ log }) {
   return (
     <div className={styles.log_list_element}>
+      <div className={styles.img}>
+        <Image
+          src={
+            log.image
+              ? log.image.formats.thumbnail.url
+              : '/images/event-default.png'
+          }
+          width={170}
+          height={100}
+          alt={log.name}
+        />
+      </div>
       <h3>Log Entry </h3>
       <h4>{log.name}</h4>
       <span>
-        {log.date} at {log.time}
+        {new Date(log.date).toLocaleDateString('en-UK')} at {log.time}
       </span>
       <Link href={`/logs/${log.slug}`}>
         <a className='btn'>More Info</a>

@@ -1,6 +1,7 @@
 import Layout from '@components/Layout';
 import Link from 'next/link';
 import { API_URL } from '@config/index';
+import Image from 'next/image';
 
 export default function LogEntry({ log }) {
   return (
@@ -8,8 +9,18 @@ export default function LogEntry({ log }) {
       <Link href='/logs'>
         <a className='btn'>Return to Logs</a>
       </Link>
+      {log.image && (
+        <div>
+          <Image
+            src={log.image.formats.medium.url}
+            width={960}
+            height={600}
+            alt={log.name}
+          />
+        </div>
+      )}
       <h1>Log Entry: {log.name}</h1>
-      <h5>{log.date}</h5>
+      <h5>{new Date(log.date).toLocaleDateString('en-UK')}</h5>
       <Link href='/logs'>
         <a className='btn'> Go Back</a>
       </Link>
