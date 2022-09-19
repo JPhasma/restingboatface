@@ -4,7 +4,7 @@ import { API_URL } from '@config/index';
 import styles from '@styles/Layout.module.css';
 import Link from 'next/link';
 
-import LogEntry from '@components/LogEntry';
+import LogListElement from '@components/LogsListElement';
 
 export default function Home({ events }) {
   return (
@@ -34,7 +34,7 @@ export default function Home({ events }) {
         <div>
           {events.length === 0 && <h1>No Logs to be seen...</h1>}
           {events.map((log) => (
-            <LogEntry key={log.id} log={log} />
+            <LogListElement key={log.id} log={log} />
           ))}
           {events.length > 0 && (
             <Link href='/logs'>

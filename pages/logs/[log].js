@@ -15,10 +15,10 @@ export default function LogEntry({ log }) {
 
 export async function getStaticPaths() {
   const res = await fetch(`${API_URL}/api/events`);
-  const events = await res.json();
+  const logs = await res.json();
 
-  const paths = events.map((evt) => ({
-    params: { log: evt.slug },
+  const paths = logs.map((log) => ({
+    params: { log: log.slug },
   }));
 
   return {

@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import styles from '@styles/LogEntry.module.css';
+import styles from '@styles/LogListElement.module.css';
 
-function LogEntry({ log }) {
+function LogListElement({ log }) {
   return (
-    <div className={styles.log_entry}>
+    <div className={styles.log_list_element}>
       <h3>Log Entry </h3>
       <h4>{log.name}</h4>
       <span>
@@ -18,4 +18,4 @@ function LogEntry({ log }) {
   );
 }
 
-export default LogEntry;
+export default LogListElement;
