@@ -23,7 +23,7 @@ export default function Home({ events }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/api/events`);
+  const res = await fetch(`${API_URL}/events?_sort=date:ASC`);
   const events = await res.json();
   // console.log(events); //LOGS ON SERVER, NOT IN BROWSER FOR getServerSideProps
   return {

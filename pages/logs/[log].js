@@ -8,13 +8,17 @@ export default function LogEntry({ log }) {
       <Link href='/logs'>
         <a className='btn'>Return to Logs</a>
       </Link>
-      <h1>Log Entry: {log.slug} </h1>
+      <h1>Log Entry: {log.name}</h1>
+      <h5>{log.date}</h5>
+      <Link href='/logs'>
+        <a className='btn'> Go Back</a>
+      </Link>
     </Layout>
   );
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`${API_URL}/api/events`);
+  const res = await fetch(`${API_URL}/events`);
   const logs = await res.json();
 
   const paths = logs.map((log) => ({
@@ -28,7 +32,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { log } }) {
-  const res = await fetch(`${API_URL}/api/events/${log}`);
+  const res = await fetch(`${API_URL}/events?slug=${log}`);
   const events = await res.json();
 
   return {
