@@ -1,9 +1,14 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import Header from './Header';
 import Footer from './Footer';
+import MainSail from './MainSail';
 import styles from '@styles/Layout.module.css';
 
 function Layout({ title, robots, keywords, description, children }) {
+  const router = useRouter();
+  console.log(router);
+
   return (
     <div>
       <Head>
@@ -15,6 +20,8 @@ function Layout({ title, robots, keywords, description, children }) {
       </Head>
 
       <Header />
+
+      {router.pathname === '/' && <MainSail />}
 
       <div className={styles.container}>{children}</div>
 
