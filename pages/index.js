@@ -47,23 +47,23 @@ export default function Home({ logs }) {
   );
 }
 
-// export async function getStaticProps() {
-//   const res = await fetch(`${API_URL}/api/logs?populate=*`);
-//   const logs = await res.json();
-
-//   return {
-//     props: { logs: logs.data },
-//     revalidate: 1,
-//   };
-// }
-
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`${API_URL}/api/logs?populate=*`);
   const logs = await res.json();
 
   return {
-    props: {
-      logs: logs.data,
-    },
+    props: { logs: logs.data },
+    revalidate: 1,
   };
 }
+
+// export async function getServerSideProps() {
+//   const res = await fetch(`${API_URL}/api/logs?populate=*`);
+//   const logs = await res.json();
+
+//   return {
+//     props: {
+//       logs: logs.data,
+//     },
+//   };
+// }
