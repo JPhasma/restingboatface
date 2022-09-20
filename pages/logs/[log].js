@@ -9,9 +9,14 @@ export default function LogEntry({ log }) {
       <Link href='/logs'>
         <a className='btn'>Return to Logs</a>
       </Link>
-      {log.banner && (
+      {log.attributes.banner && (
         <div>
-          <Image src={log.banner.url} width={960} height={600} alt={log.name} />
+          <Image
+            src={log.attributes.banner.data.attributes.url}
+            width={960}
+            height={600}
+            alt={log.name}
+          />
         </div>
       )}
       <h1>{log.attributes.title}</h1>
@@ -26,7 +31,9 @@ export default function LogEntry({ log }) {
 }
 
 export async function getServerSideProps({ params: { log } }) {
-  const res = await fetch(`${API_URL}/api/logs?filters[slug][$eq]=${log}`);
+  const res = await fetch(
+    `${API_URL}/api/logs?populate=*&filters[slug][$eq]=${log}`
+  );
   const logs = await res.json();
 
   return {
