@@ -29,23 +29,32 @@ export default function SearchPage({ logs }) {
 }
 
 export async function getServerSideProps({ query: { term } }) {
-  const query = qs.stringify({
-    _where: {
-      _or: [
-        {
-          title_contains: term,
-        },
-        {
-          ahoy_contains: term,
-        },
-      ],
+  const query = qs.stringify(
+    {
+      filters: {
+        $or: [
+          {
+            title: {
+              $contains: term,
+            },
+          },
+          {
+            ahoy: {
+              $contains: term,
+            },
+          },
+        ],
+      },
     },
-  });
+    {
+      encodeValuesOnly: true, // pretify URL
+    }
+  );
 
-  const res = await fetch(`${API_URL}/logs?${query}`);
+  const res = await fetch(`${API_URL}/api/logs?${query}`);
   const logs = await res.json();
-  // console.log(logs); //LOGS ON SERVER, NOT IN BROWSER FOR getServerSideProps
+
   return {
-    props: { logs },
+    props: { logs: logs.data },
   };
 }

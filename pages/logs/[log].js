@@ -14,10 +14,10 @@ export default function LogEntry({ log }) {
           <Image src={log.banner.url} width={960} height={600} alt={log.name} />
         </div>
       )}
-      <h1>{log.title}</h1>
-      <h5>{new Date(log.date).toLocaleDateString('en-UK')}</h5>
+      <h1>{log.attributes.title}</h1>
+      <h5>{new Date(log.attributes.date).toLocaleDateString('en-UK')}</h5>
       <h3>Entry:</h3>
-      <p>{log.ahoy}</p>
+      <p>{log.attributes.ahoy}</p>
       <Link href='/logs'>
         <a className='btn'> Go Back</a>
       </Link>
@@ -26,12 +26,12 @@ export default function LogEntry({ log }) {
 }
 
 export async function getServerSideProps({ params: { log } }) {
-  const res = await fetch(`${API_URL}/logs?slug=${log}`);
+  const res = await fetch(`${API_URL}/api/logs?filters[slug][$eq]=${log}`);
   const logs = await res.json();
 
   return {
     props: {
-      log: logs[0],
+      log: logs.data[0],
     },
   };
 }
