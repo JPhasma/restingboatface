@@ -22,12 +22,23 @@ export default function Logs({ logs }) {
   );
 }
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+//   const res = await fetch(`${API_URL}/logs?_sort=date:ASC`);
+//   const logs = await res.json();
+//   // console.log(logs); //LOGS ON SERVER, NOT IN BROWSER FOR getServerSideProps
+//   return {
+//     props: { logs },
+//     revalidate: 1,
+//   };
+// }
+
+export async function getServerSideProps() {
   const res = await fetch(`${API_URL}/logs?_sort=date:ASC`);
   const logs = await res.json();
-  // console.log(logs); //LOGS ON SERVER, NOT IN BROWSER FOR getServerSideProps
+
   return {
-    props: { logs },
-    revalidate: 1,
+    props: {
+      logs,
+    },
   };
 }

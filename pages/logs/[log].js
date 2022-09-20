@@ -27,11 +27,11 @@ export default function LogEntry({ log }) {
 
 export async function getServerSideProps({ params: { log } }) {
   const res = await fetch(`${API_URL}/logs?slug=${log}`);
-  const events = await res.json();
+  const logs = await res.json();
 
   return {
     props: {
-      log: events[0],
+      log: logs[0],
     },
   };
 }
@@ -52,11 +52,11 @@ export async function getServerSideProps({ params: { log } }) {
 
 // export async function getStaticProps({ params: { log } }) {
 //   const res = await fetch(`${API_URL}/logs?slug=${log}`);
-//   const events = await res.json();
+//   const logs = await res.json();
 
 //   return {
 //     props: {
-//       log: events[0],
+//       log: logs[0],
 //     },
 //     revalidate: 1,
 //   };
