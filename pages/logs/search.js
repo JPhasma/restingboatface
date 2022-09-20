@@ -51,7 +51,7 @@ export async function getServerSideProps({ query: { term } }) {
     }
   );
 
-  const res = await fetch(`${API_URL}/api/logs?${query}`);
+  const res = await fetch(`${API_URL}/api/logs?populate=*&${query}`);
   const logs = await res.json();
 
   return {
