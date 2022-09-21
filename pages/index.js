@@ -49,9 +49,7 @@ export default function Home({ logs }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(
-    `https://mystrapi-restingboatface.herokuapp.com/api/logs?populate=*`
-  );
+  const res = await fetch(`${API_URL}/api/logs?populate=*`);
   const logs = await res.json();
 
   return {
