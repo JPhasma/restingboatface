@@ -24,7 +24,7 @@ export default function Home({ logs }) {
             A personal log of learning to sail in 2022+ and buying our first
             boat and the adventures we had and times and places we sailed.
           </p>
-          <p>We begin in our adopted home country of Wales</p>
+          <p>We begin in our adopted home country of Cymru (Wales)</p>
           <p>
             Follow me on instagram -
             <a href={'https://www.instagram.com/restingboatface/'}>
