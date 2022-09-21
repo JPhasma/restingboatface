@@ -57,14 +57,3 @@ export async function getStaticProps() {
     revalidate: 1,
   };
 }
-
-// export async function getServerSideProps() {
-//   const res = await fetch(`${API_URL}/ap i/logs?populate=*`);
-//   const logs = await res.json();
-
-//   return {
-//     props: {
-//       logs: logs.data,
-//     },
-//   };
-// }

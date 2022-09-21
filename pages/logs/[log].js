@@ -42,29 +42,3 @@ export async function getServerSideProps({ params: { log } }) {
     },
   };
 }
-
-// export async function getStaticPaths() {
-//   const res = await fetch(`${API_URL}/logs`);
-//   const logs = await res.json();
-
-//   const paths = logs.map((log) => ({
-//     params: { log: log.slug },
-//   }));
-
-//   return {
-//     paths,
-//     fallback: true,
-//   };
-// }
-
-// export async function getStaticProps({ params: { log } }) {
-//   const res = await fetch(`${API_URL}/logs?slug=${log}`);
-//   const logs = await res.json();
-
-//   return {
-//     props: {
-//       log: logs[0],
-//     },
-//     revalidate: 1,
-//   };
-// }
