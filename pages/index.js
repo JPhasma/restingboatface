@@ -22,8 +22,9 @@ export default function Home({ logs }) {
         <div className={styles.grid}>
           <p>
             A personal log of learning to sail in 2022+ and buying our first
-            boat and the adventures we had and times and places we sailed
+            boat and the adventures we had and times and places we sailed.
           </p>
+          <p>We begin in our adopted home country of Cymru (Wales)</p>
           <p>
             Follow me on instagram -
             <a href={'https://www.instagram.com/restingboatface/'}>
@@ -48,7 +49,9 @@ export default function Home({ logs }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/api/logs?populate=*`);
+  const res = await fetch(
+    `https://mystrapi-restingboatface.herokuapp.com/api/logs?populate=*`
+  );
   const logs = await res.json();
 
   return {
@@ -58,12 +61,12 @@ export async function getStaticProps() {
 }
 
 // export async function getServerSideProps() {
-//   const res = await fetch(`${API_URL}/logs?_sort=date:ASC`);
+//   const res = await fetch(`${API_URL}/ap i/logs?populate=*`);
 //   const logs = await res.json();
 
 //   return {
 //     props: {
-//       logs,
+//       logs: logs.data,
 //     },
 //   };
 // }
