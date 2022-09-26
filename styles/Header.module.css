@@ -1,4 +1,39 @@
 .header {
   padding: 1rem;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
+  position: fixed;
+  bottom: 0;
+  background: red;
+  width: 100vw;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+}
+
+#home_icon {
+  transition: all 1s;
+  border: 2px solid green;
+  height: 60px;
+  width: 60px;
+}
+
+#home_icon:hover {
+  transform: scale(1.1);
+}
+
+#icon {
+  height: 60px;
+  width: 60px;
+  color: pink;
+}
+
+#site_name {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #site_name {
+    border: 1px solid yellow;
+    display: inline;
+  }
 }

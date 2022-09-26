@@ -22,6 +22,9 @@ function Search() {
           onChange={(e) => setTerm(e.target.value)}
           placeholder='Search the logs'
         />
+        <button>
+          <span className='fa fa-search'></span>
+        </button>
       </form>
     </div>
   );

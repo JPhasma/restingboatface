@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import Search from './Search';
+import Navlist from './Navlist';
+import Social from '../components/Social';
+
 import styles from '@styles/Header.module.css';
 
 function Header() {
@@ -7,10 +10,13 @@ function Header() {
     <div className={styles.header}>
       <Link href='/'>
         <a>
-          <h1>Resting Boat Face</h1>
+          <span id={styles.home_icon} className='fa-solid fa-sailboat'></span>
+          <span id={styles.site_name}>Resting Boat Face</span>
         </a>
       </Link>
       <Search />
+      <Social />
+      <Navlist />
     </div>
   );
 }

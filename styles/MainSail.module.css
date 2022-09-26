@@ -1,7 +1,8 @@
 .mainsail {
   background: deepskyblue;
-  height: 200px;
+  height: 100vh;
   color: aliceblue;
-  text-align: center;
-  padding: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
