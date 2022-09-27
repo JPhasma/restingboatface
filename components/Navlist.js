@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from '../styles/Navlist.module.css';
 
 function Navlist({ tags }) {
@@ -5,7 +6,16 @@ function Navlist({ tags }) {
   return (
     <div className={styles.navlist}>
       <ul>
-        <li>HomePort</li>
+        <li>
+          <Link href='/'>
+            <a>HomePort</a>
+          </Link>
+        </li>
+        <li>
+          <Link href='/gallery'>
+            <a>Gallery</a>
+          </Link>
+        </li>
       </ul>
     </div>
   );
