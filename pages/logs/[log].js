@@ -5,7 +5,8 @@ import Image from 'next/image';
 
 export default function LogEntry({ log }) {
   return (
-    <Layout><h2>Latest</h2>
+    <Layout>
+      <h2>Latest</h2>
       <Link href='/logs'>
         <a className='btn'>Return to Logs</a>
       </Link>
@@ -13,11 +14,11 @@ export default function LogEntry({ log }) {
         <div>
           <Image
             src={log.attributes.banner.data.attributes.url}
-            width={960}ß
+            width={960}
             height={600}
             alt={log.name}
           />
-        </div
+        </div>
       )}
       <h1>{log.attributes.title}</h1>
       <h5>{new Date(log.attributes.date).toLocaleDateString('en-UK')}</h5>
