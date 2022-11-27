@@ -1,3 +1,18 @@
 .ahoyahoy {
-  border: 10px solid red;
+  background-color: deepskyblue;
+  color: white;
+  text-align: center;
+}
+
+.title a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
 }
