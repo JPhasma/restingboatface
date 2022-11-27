@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import MainSail from './MainSail';
 import styles from '@styles/Layout.module.css';
+import { Main } from 'next/document';
 
 function Layout({ title, robots, keywords, description, children }) {
   const router = useRouter();
