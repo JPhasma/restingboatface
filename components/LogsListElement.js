@@ -20,13 +20,15 @@ function LogListElement({ log }) {
       </div>
 
       <h4>{log.attributes.title}</h4>
-      <span>
-        {new Date(log.attributes.date).toLocaleDateString('en-UK')} at{' '}
-        {log.time}
-      </span>
-      <Link href={`/logs/${log.attributes.slug}`}>
+      <h5>
+        {new Date(log.attributes.date).toLocaleDateString('en-UK')}
+        {/* at{' '}
+        {log.time} */}
+      </h5>
+      <p>{log.attributes.ahoy}</p>
+      {/* <Link href={`/logs/${log.attributes.slug}`}>
         <a className='btn'>More Info</a>
-      </Link>
+      </Link> */}
     </div>
   );
 }
