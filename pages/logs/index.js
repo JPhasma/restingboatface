@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Layout from '@components/Layout';
 import { API_URL } from '@config/index';
-import styles from '@styles/Layout.module.css';
+import styles from '@styles/Layout.module.scss';
 
 import LogListElement from '@components/LogsListElement';
 
