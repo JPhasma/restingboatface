@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from '@styles/Search.module.css';
+import { MdSearch } from 'react-icons/md';
 
 function Search() {
   const [term, setTerm] = useState('');
@@ -22,6 +23,9 @@ function Search() {
           onChange={(e) => setTerm(e.target.value)}
           placeholder='Search the logs'
         />
+        <button type='submit'>
+          <MdSearch title='Search' />
+        </button>
       </form>
     </div>
   );
