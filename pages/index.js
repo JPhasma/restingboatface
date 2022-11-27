@@ -49,7 +49,7 @@ export default function Home({ logs }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/api/logs?populate=*&sort=desc`);
+  const res = await fetch(`${API_URL}/api/logs?populate=*&sort=date:asc`);
   const logs = await res.json();
 
   return {
