@@ -4,7 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import AhoyAhoy from './AhoyAhoy';
 
-import styles from '@styles/Layout.module.css';
+import styles from '@styles/Layout.module.scss';
 
 function Layout({ title, robots, keywords, description, children }) {
   const router = useRouter();

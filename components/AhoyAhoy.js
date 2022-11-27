@@ -1,4 +1,4 @@
-import styles from '@styles/AhoyAhoy.module.css';
+import styles from '@styles/AhoyAhoy.module.scss';
 
 function AhoyAhoy() {
   return (

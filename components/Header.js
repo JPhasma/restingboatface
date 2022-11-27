@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Search from './Search';
-import styles from '@styles/Header.module.css';
+import styles from '@styles/Header.module.scss';
 import { IconContext } from 'react-icons';
 import {
   MdSailing,
@@ -12,7 +12,7 @@ import { GrInstagram } from 'react-icons/gr';
 
 function Header() {
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <IconContext.Provider
         value={{ className: 'react-icons', color: 'deepskyblue', size: '2rem' }}
       >
@@ -26,7 +26,6 @@ function Header() {
 
         <Search />
 
-        <MdSentimentNeutral title='RestingFace' />
         <Link href='https://www.instagram.com/restingboatface'>
           <a>
             <GrInstagram title='Instagram' />
@@ -36,7 +35,7 @@ function Header() {
           <MdOutlineMenu title='Menu' />
         </button>
       </IconContext.Provider>
-    </div>
+    </header>
   );
 }
 

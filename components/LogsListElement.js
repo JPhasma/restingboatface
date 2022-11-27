@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import styles from '@styles/LogListElement.module.css';
+import styles from '@styles/LogListElement.module.scss';
 
 function LogListElement({ log }) {
   return (
