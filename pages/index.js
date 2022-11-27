@@ -1,16 +1,17 @@
 import Image from 'next/image';
 import Layout from '@components/Layout';
 import { API_URL } from '@config/index';
+
 import styles from '@styles/Layout.module.css';
 import Link from 'next/link';
 
 import LogListElement from '@components/LogsListElement';
 
-export default function Home({ logs }) {
+export default function Home({ logs, mainsail }) {
   return (
     <Layout>
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <h1>
           Willkommen, Bienvenue, Welcome...
           <br />
           to Resting Boat Face
@@ -19,7 +20,7 @@ export default function Home({ logs }) {
           <em>Ahoy, Ahoy!</em>
         </h3>
 
-        <div className={styles.grid}>
+        <div>
           <p>
             A personal log of learning to sail in 2022+ and buying our first
             boat and the adventures we had and times and places we sailed.
@@ -52,19 +53,13 @@ export async function getStaticProps() {
   const res = await fetch(`${API_URL}/api/logs?populate=*&sort=date:asc`);
   const logs = await res.json();
 
+  const mainsailres = await fetch(
+    `https://mystrapi-restingboatface.herokuapp.com/api/main-sails?populate=*`
+  );
+  const mainsail = await mainsailres.json();
+
   return {
-    props: { logs: logs.data },
+    props: { logs: logs.data, mainsail: mainsail.data },
     revalidate: 1,
   };
 }
-
-// export async function getServerSideProps() {
-//   const res = await fetch(`${API_URL}/ap i/logs?populate=*`);
-//   const logs = await res.json();
-
-//   return {
-//     props: {
-//       logs: logs.data,
-//     },
-//   };
-// }
