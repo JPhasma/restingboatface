@@ -19,7 +19,8 @@ function Header() {
         <Link href='/'>
           <a>
             <h1>
-              <MdSailing title='RestingBoatFace Home' /> Resting Boat Face
+              <MdSailing title='RestingBoatFace Home' />{' '}
+              <span id='title'>Resting Boat Face</span>
             </h1>
           </a>
         </Link>
@@ -31,7 +32,7 @@ function Header() {
             <GrInstagram title='Instagram' />
           </a>
         </Link>
-        <button>
+        <button id='menu_toggle'>
           <MdOutlineMenu title='Menu' />
         </button>
       </IconContext.Provider>

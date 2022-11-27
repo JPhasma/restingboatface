@@ -1,4 +1,18 @@
+@import './variables';
+
 .header {
   padding: 1rem;
   border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    background-color: #fff;
+    border: 0px solid white;
+  }
+
+  a,
+  button {
+    display: inline-block;
+  }
 }
