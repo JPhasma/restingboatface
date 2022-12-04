@@ -32,9 +32,9 @@ function Header() {
             <GrInstagram title='Instagram' />
           </a>
         </Link>
-        <button id='menu_toggle'>
+        {/* <button id='menu_toggle'>
           <MdOutlineMenu title='Menu' />
-        </button>
+        </button> */}
       </IconContext.Provider>
     </header>
   );

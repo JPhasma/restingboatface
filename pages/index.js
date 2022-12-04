@@ -10,7 +10,7 @@ export default function Home({ logs }) {
   return (
     <Layout>
       <main className={styles.main}>
-        <div>
+        <div className={styles.grid}>
           {logs.length === 0 && <h1>No Logs to be seen...</h1>}
           {logs.map((log) => (
             <LogListElement key={log.id} log={log} />

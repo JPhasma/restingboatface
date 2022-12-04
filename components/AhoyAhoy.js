@@ -3,6 +3,7 @@ import styles from '@styles/AhoyAhoy.module.scss';
 function AhoyAhoy() {
   return (
     <div className={styles.ahoyahoy}>
+      <div className={styles.img_container}></div>
       <h1 className={styles.title}>
         Willkommen, Bienvenue, Welcome...
         <br />

@@ -1,9 +1,36 @@
 .ahoyahoy {
-  background-color: deepskyblue;
+  background-color: #111;
+  position: relative;
   color: white;
   text-align: center;
-  height: 90vh;
-  padding-top: 48%;
+  height: 95vh;
+  // padding: 2rem;
+
+  .img_container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-image: url('https://res.cloudinary.com/dfudsx2je/image/upload/v1663771497/large_B81_D3_E1_C_F8_F8_488_C_98_DC_419_E986_A84_BC_7bd4569b90.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    @media (prefers-color-scheme: dark) {
+      opacity: 0.3;
+    }
+  }
+  h1,
+  h3,
+  p {
+    position: relative;
+    z-index: 10;
+    padding: 1rem;
+    @media (prefers-color-scheme: dark) {
+      color: #aaa;
+    }
+  }
+  p,
+  h3 {
+  }
 }
 
 .title a {
@@ -12,9 +39,12 @@
 }
 
 .grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // flex-wrap: wrap;
+  // max-width: 800px;
+}
+
+#ahoyahoy {
 }
