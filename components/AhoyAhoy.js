@@ -5,7 +5,7 @@ function AhoyAhoy() {
     <div className={styles.ahoyahoy}>
       <div className={styles.img_container}></div>
       <h1 className={styles.title}>
-        Willkommen, Bienvenue, Welcome...
+        Willkommen, Bienvenue, Croeso, Welcome...
         <br />
         to Resting Boat Face
       </h1>
