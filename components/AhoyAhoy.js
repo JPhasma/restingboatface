@@ -14,8 +14,9 @@ function AhoyAhoy() {
       </h3>
       <div className={styles.grid}>
         <p>
-          A personal log of learning to sail in 2022+ and buying our first boat
-          and the adventures we had and times and places we sailed.
+          A personal log of learning to sail (we started May 2022) and buying
+          our first boat and the adventures we had and times and places we
+          sailed.
         </p>
         <p>We begin in our adopted home country of Cymru (Wales)</p>
         <p>
