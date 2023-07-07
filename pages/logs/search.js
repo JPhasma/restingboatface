@@ -12,9 +12,7 @@ export default function SearchPage({ logs }) {
   return (
     <Layout title='Search Results'>
       <main className={styles.main}>
-        <Link href='/logs'>
-          <a className='btn'>Back to Logs</a>
-        </Link>
+        <Link href='/logs'>Back to Logs</Link>
         <h3>Search results for - {router.query.term}</h3>
 
         <div className={styles.grid}>

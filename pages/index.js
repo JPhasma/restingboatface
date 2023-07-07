@@ -15,11 +15,7 @@ export default function Home({ logs }) {
           {logs.map((log) => (
             <LogListElement key={log.id} log={log} />
           ))}
-          {logs.length > 0 && (
-            <Link href='/logs'>
-              <a className='btn'>More Logs</a>
-            </Link>
-          )}
+          {logs.length > 0 && <Link href='/logs'>More Logs</Link>}
         </div>
       </main>
     </Layout>

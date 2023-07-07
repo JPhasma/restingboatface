@@ -15,7 +15,6 @@ function LogListElement({ log }) {
           }
           width={340}
           height={200}
-          fill
           sizes='(max-width: 768px) 100vw,
           (max-width: 1200px) 50vw,
           33vw'
@@ -30,8 +29,8 @@ function LogListElement({ log }) {
         {log.time} */}
       </h5>
       <p>{log.attributes.ahoy}</p>
-      {/* <Link href={`/logs/${log.attributes.slug}`}>
-        <a className='btn'>More Info</a>
+      {/* <Link href={`/logs/${log.attributes.slug}` className='btn'}>
+      More Info
       </Link> */}
     </div>
   );

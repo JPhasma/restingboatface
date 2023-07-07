@@ -12,9 +12,7 @@ function NotFoundPage() {
           <FaExclamationTriangle /> 404
         </h1>
         <h2>Page Not Found</h2>
-        <Link href='/'>
-          <a>Head back to safe home harbour</a>
-        </Link>
+        <Link href='/'>Head back to safe home harbour</Link>
       </div>
     </Layout>
   );

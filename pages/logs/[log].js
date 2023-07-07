@@ -6,9 +6,7 @@ import Image from 'next/image';
 export default function LogEntry({ log }) {
   return (
     <Layout>
-      <Link href='/logs'>
-        <a className='btn'>Return to Logs</a>
-      </Link>
+      <Link href='/logs'>Return to Logs</Link>
       {log.attributes.banner && (
         <div>
           <Image
@@ -23,9 +21,7 @@ export default function LogEntry({ log }) {
       <h5>{new Date(log.attributes.date).toLocaleDateString('en-UK')}</h5>
       <h3>Entry:</h3>
       <p>{log.attributes.ahoy}</p>
-      <Link href='/logs'>
-        <a className='btn'> Go Back</a>
-      </Link>
+      <Link href='/logs'>Go Back</Link>
     </Layout>
   );
 }

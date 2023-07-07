@@ -17,20 +17,16 @@ function Header() {
         value={{ className: 'react-icons', color: 'deepskyblue', size: '2rem' }}
       >
         <Link href='/'>
-          <a>
-            <h1>
-              <MdSailing title='RestingBoatFace Home' />{' '}
-              <span id='title'>Resting Boat Face</span>
-            </h1>
-          </a>
+          <h1>
+            <MdSailing title='RestingBoatFace Home' />{' '}
+            <span id='title'>Resting Boat Face</span>
+          </h1>
         </Link>
 
         <Search />
 
         <Link href='https://www.instagram.com/restingboatface'>
-          <a>
-            <GrInstagram title='Instagram' />
-          </a>
+          <GrInstagram title='Instagram' />
         </Link>
         {/* <button id='menu_toggle'>
           <MdOutlineMenu title='Menu' />
